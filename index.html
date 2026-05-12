@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIDAS Lite - Smart Fabric Inspection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="translations.js"></script>
+</head>
+
+<body id="top">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="assets/fidas-lite-logo.png" alt="FIDAS Lite Logo" class="logo-img">
+                <span class="logo-text">FIDAS-<span>Lite</span></span>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" data-i18n="nav_home">Home</a>
+                <a href="#features" data-i18n="nav_features">Features</a>
+                <a href="#why" data-i18n="nav_why">Why FIDAS Lite</a>
+                <div class="nav-item-dropdown">
+                    <a href="javascript:void(0)" class="dropdown-trigger" data-i18n="nav_resources">Resources</a>
+                    <div class="dropdown-menu">
+                        <a href="blog.html" data-i18n="nav_blogs">Blogs</a>
+                        <a href="faq.html" data-i18n="nav_faq">FAQ / Q & A</a>
+                    </div>
+                </div>
+                <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+            </div>
+            <div class="lang-switcher">
+                <a href="#" class="lang-option active" data-lang="en">EN</a>
+                <span class="lang-divider"></span>
+                <a href="#" class="lang-option" data-lang="hi">हिंदी</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-btn" data-i18n="nav_demo">Book a Demo &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-container">
+            <div class="hero-bg-track">
+                <div class="hero-bg-panel hero-img-composite"></div>
+                <div class="hero-bg-panel hero-img-composite"></div>
+                <!-- Duplicate Set -->
+                <div class="hero-bg-panel hero-img-composite"></div>
+                <div class="hero-bg-panel hero-img-composite"></div>
+            </div>
+            <div class="hero-lighting"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title" data-i18n="hero_title">Smart Fabric<br>Inspection<br><span>Made Simple</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">Affordable, scalable fabric inspection software
+                    designed to modernize textile
+                    mills.</p>
+
+                <div class="hero-actions">
+                    <a href="#how-it-works" class="btn btn-secondary">
+                        <span data-i18n="hero_see_how">See how it works</span>
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="8,5 19,12 8,19" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="contact.html" class="btn btn-outline" data-i18n="hero_book_demo">Book a demo &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <div class="trust-wrapper">
+        <div class="container">
+            <div class="trust-strip fade-in-up">
+                <div class="trust-item">
+                    <div class="trust-icon circle-purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <span data-i18n="trust_1">Customized Inspection Technology for Textile Industries</span>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon circle-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <span data-i18n="trust_2">Affordable subscription-based pricing</span>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon circle-teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <span data-i18n="trust_3">Local partner support for setup and service</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section light-section about-section-new">
+        <div class="container">
+            <div class="about-header text-center fade-in-up">
+                <div class="about-supertitle" data-i18n="about_super">ABOUT US</div>
+                <h2 class="section-title" style="font-size: 48px;" data-i18n="about_title">About <span>FIDAS Lite</span>
+                </h2>
+                <p class="section-text about-desc" data-i18n="about_desc">
+                    FIDAS Lite replaces manual fabric inspection with a fast, digital system. Designed for mid-size
+                    textile mills, it helps teams track defects in real-time, standardize grading, and improve
+                    decision-making.
+                </p>
+            </div>
+            <br>
+
+
+            <div class="about-gallery fade-in-up delay-2">
+                <div class="gallery-strip" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <img src="assets/blog-hmi-1.png" alt="Industrial HMI" class="about-gallery-img">
+                    <img src="assets/blog-hmi-2.png" alt="Factory Floor" class="about-gallery-img">
+                    <img src="assets/blog-hmi-3.png" alt="Digital Control" class="about-gallery-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tagline Separator 2 -->
+    <div class="tagline-separator">
+        <h2 class="tagline-text fade-in-up" data-i18n="tagline_2">From Manual Inspection to <span>Digital
+                Precision</span>.</h2>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="section features-new light-theme">
+        <div class="container text-center fade-in-up">
+            <div class="features-badge">FEATURES</div>
+            <h2 class="section-title" style="font-size: 48px; margin-bottom: 20px;">Everything You Need. <span>Smarter
+                    Quality.</span></h2>
+            <p class="section-text" style="max-width: 800px; margin: 0 auto 60px;">
+                FIDAS Lite simplifies textile inspection with powerful tools and intelligent automation — built to
+                deliver accuracy, traceability, and complete quality control.
+            </p>
+        </div>
+
+        <div class="container relative" style="position: relative;">
+
+            <div class="conveyor-section-wrapper">
+                <div class="conveyor-motion-bg"></div>
+                <div class="conveyor-diagonal-wrapper">
+                    <div class="features-carousel-wrapper" id="features-carousel">
+                        <div class="features-conveyor-belt">
+
+                            <!-- Card 1 -->
+                            <div class="feature-glass-card card-1">
+                                <div class="glass-card-inner">
+                                    <div class="glass-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.17a1 1 0 0 0 3.988 3.986L21.174 6.812z">
+                                            </path>
+                                            <path d="m6.3 14.7-1.4 1.4M9 12l-1.4 1.4M12 9.1l-1.4 1.4M15 6.2l-1.4 1.4">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <h3>Length & Width Measurement</h3>
+                                    <p class="feature-desc">Precise measurement of fabric length and width in real-time.
+                                    </p>
+                                    <div class="card-number">01</div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="feature-glass-card card-2">
+                                <div class="glass-card-inner">
+                                    <div class="glass-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg>
+                                    </div>
+                                    <h3>Defect Logging & Grading</h3>
+                                    <p class="feature-desc">Log defects manually and grade them for better quality
+                                        analysis.</p>
+                                    <div class="card-number">02</div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="feature-glass-card card-3">
+                                <div class="glass-card-inner">
+                                    <div class="glass-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                    </div>
+                                    <h3>Real-time Running Meters</h3>
+                                    <p class="feature-desc">Live display of running meters for complete inspection
+                                        visibility.</p>
+                                    <div class="card-number">03</div>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="feature-glass-card card-4">
+                                <div class="glass-card-inner">
+                                    <div class="glass-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 5v14"></path>
+                                            <path d="M8 5v14"></path>
+                                            <path d="M12 5v14"></path>
+                                            <path d="M17 5v14"></path>
+                                            <path d="M21 5v14"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>Barcode Generation & Printing</h3>
+                                    <p class="feature-desc">Create and print barcodes for rolls, bales, pallets & jumbo
+                                        rolls.</p>
+                                    <div class="card-number">04</div>
+                                </div>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="feature-glass-card card-5">
+                                <div class="glass-card-inner">
+                                    <div class="glass-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M18 10h-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2z">
+                                            </path>
+                                            <circle cx="7" cy="12" r="2"></circle>
+                                        </svg>
+                                    </div>
+                                    <h3>Roll & Inventory Management</h3>
+                                    <p class="feature-desc">Manage rolls, bale, pallets and join rolls efficiently.</p>
+                                    <div class="card-number">05</div>
+                                </div>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div class="feature-glass-card card-6">
+                                <div class="glass-card-inner">
+                                    <div class="glass-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+                                            </path>
+                                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                            <path d="M9 14h6"></path>
+                                            <path d="M9 18h6"></path>
+                                            <path d="M9 10h.01"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>Reports & Alerts</h3>
+                                    <p class="feature-desc">Smart reports, email alerts and department-wise insights.
+                                    </p>
+                                    <div class="card-number">06</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Conveyor Belt Visual (High Detail) -->
+                    <div class="conveyor-visual">
+                        <div class="conveyor-underglow"></div>
+                        <div class="conveyor-roller-area">
+                            <div class="conveyor-rollers"></div>
+                        </div>
+                        <div class="conveyor-front-bar">
+                            <div class="conveyor-bolt"></div>
+                            <div class="conveyor-bolt"></div>
+                            <div class="conveyor-bolt"></div>
+                            <div class="conveyor-bolt"></div>
+                            <div class="conveyor-bolt"></div>
+                            <div class="conveyor-bolt"></div>
+                        </div>
+                        <div class="conveyor-wheel-left">
+                            <div class="conveyor-wheel-hub"></div>
+                        </div>
+                        <div class="conveyor-wheel-right">
+                            <div class="conveyor-wheel-hub"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tagline Separator 3 -->
+    <div class="tagline-separator">
+        <h2 class="tagline-text fade-in-up" data-i18n="tagline_3">Streamlined Inspection. <span>Standardized
+                Results</span>.</h2>
+    </div>
+
+    <!-- Problem vs Solution -->
+    <section class="section light-section pv-section-container">
+        <div class="container">
+            <div class="pv-grid">
+                <div class="pv-card problem-card fade-in-left">
+                    <h3 class="pv-title" data-i18n="challenges_title">The Challenges</h3>
+                    <ul class="pv-list">
+                        <li>
+                            <div class="pv-icon-bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg></div>
+                            <span data-i18n="challenge_1">Manual logs and paperwork</span>
+                        </li>
+                        <li>
+                            <div class="pv-icon-bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg></div>
+                            <span data-i18n="challenge_2">Limited inspection visibility</span>
+                        </li>
+                        <li>
+                            <div class="pv-icon-bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg></div>
+                            <span data-i18n="challenge_3">Expensive software systems</span>
+                        </li>
+                        <li>
+                            <div class="pv-icon-bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg></div>
+                            <span data-i18n="challenge_4">Inconsistent grading processes</span>
+                        </li>
+                        <li>
+                            <div class="pv-icon-bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg></div>
+                            <span data-i18n="challenge_5">Slow inspection workflows</span>
+                        </li>
+                        <li>
+                            <div class="pv-icon-bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg></div>
+                            <span data-i18n="challenge_6">Difficult record management</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pv-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                </div>
+
+                <div class="pv-card solution-card fade-in-right">
+                    <h3 class="pv-title" data-i18n="solution_title">The Solution</h3>
+                    <ul class="pv-list">
+                        <li>
+                            <div class="pv-icon-good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <span data-i18n="solution_1">Digital defect logging</span>
+                        </li>
+                        <li>
+                            <div class="pv-icon-good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <span data-i18n="solution_2">ASTM 4-point grading</span>
+                        </li>
+                        <li>
+                            <div class="pv-icon-good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <span data-i18n="solution_3">Simplified inspection reporting</span>
+                        </li>
+                        <li>
+                            <div class="pv-icon-good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <span data-i18n="solution_4">Better inspection consistency</span>
+                        </li>
+                        <li>
+                            <div class="pv-icon-good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <span data-i18n="solution_5">Affordable implementation</span>
+                        </li>
+                        <li>
+                            <div class="pv-icon-good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></div>
+                            <span data-i18n="solution_6">Industrial HMI support</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tagline Separator 4 -->
+    <div class="tagline-separator">
+        <h2 class="tagline-text fade-in-up" data-i18n="tagline_4">Industrial-Grade <span>Monitoring</span> for the
+            Factory Floor.</h2>
+    </div>
+
+    <!-- Industrial Hardware Ecosystem -->
+    <section id="hardware-ecosystem" class="section hardware-ecosystem-section">
+        <div class="container">
+            <div class="ecosystem-header text-center fade-in-up">
+                <div class="ecosystem-badge">
+                    <span class="badge-dot">•</span> INDUSTRIAL HARDWARE ECOSYSTEM <span class="badge-dot">•</span>
+                </div>
+                <h2 class="section-title">Supported <span>Hardware</span></h2>
+                <p class="section-text">A complete hardware ecosystem designed for the rigors of textile manufacturing
+                    environments.</p>
+            </div>
+
+            <div class="ecosystem-grid">
+                <!-- Left: HMI Showcase Cards -->
+                <div class="ecosystem-left fade-in-left">
+                    <div class="hardware-grid">
+                        <div class="hw-showcase-card">
+                            <div class="hw-card-body">
+                                <div class="hw-display-area">
+                                    <div class="hw-podium"></div>
+                                    <img src="assets/hmi-front-view.png" alt="7 inch HMI"
+                                        class="hw-monitor-img monitor-7">
+                                </div>
+                                <div class="hw-content-area">
+                                    <h4>7" HMI</h4>
+                                    <p>Compact industrial display built for reliable 24/7 operation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hw-showcase-card">
+                            <div class="hw-card-body">
+                                <div class="hw-display-area">
+                                    <div class="hw-podium"></div>
+                                    <img src="assets/hmi-front-view.png" alt="10 inch HMI"
+                                        class="hw-monitor-img monitor-10">
+                                </div>
+                                <div class="hw-content-area">
+                                    <h4>10" HMI</h4>
+                                    <p>Mid-size industrial display designed for comfortable 24/7 monitoring.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hw-showcase-card">
+                            <div class="hw-card-body">
+                                <div class="hw-display-area">
+                                    <div class="hw-podium"></div>
+                                    <img src="assets/hmi-front-view.png" alt="15.6 inch HMI"
+                                        class="hw-monitor-img monitor-15">
+                                </div>
+                                <div class="hw-content-area">
+                                    <h4>15.6" HMI</h4>
+                                    <p>Large high-visibility industrial display built for seamless 24/7 operation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Feature Cards Grid -->
+                <div class="ecosystem-right fade-in-right">
+                    <div class="hw-features-grid">
+                        <div class="hw-feat-card">
+                            <div class="hw-feat-icon-box">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <h4>Industrial Grade Hardware</h4>
+                            <p>Built for factory floor environments.</p>
+                            <div class="hw-feat-accent"></div>
+                        </div>
+                        <div class="hw-feat-card">
+                            <div class="hw-feat-icon-box">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <h4>Continuous Operation</h4>
+                            <p>Reliable 24/7 industrial performance.</p>
+                            <div class="hw-feat-accent"></div>
+                        </div>
+                        <div class="hw-feat-card">
+                            <div class="hw-feat-icon-box">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                                    <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                                    <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                                    <path
+                                        d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h4>Touchscreen Interface</h4>
+                            <p>Optimized for operator-based workflows.</p>
+                            <div class="hw-feat-accent"></div>
+                        </div>
+                        <div class="hw-feat-card">
+                            <div class="hw-feat-icon-box">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M15 3h6v6"></path>
+                                    <path d="M9 21H3v-6"></path>
+                                    <path d="M21 3l-7 7"></path>
+                                    <path d="M3 21l7-7"></path>
+                                </svg>
+                            </div>
+                            <h4>Flexible Integration</h4>
+                            <p>Supports multiple HMI display sizes.</p>
+                            <div class="hw-feat-accent"></div>
+                        </div>
+                        <div class="hw-feat-card">
+                            <div class="hw-feat-icon-box">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <h4>Simple Setup</h4>
+                            <p>Designed for quick industrial deployment.</p>
+                            <div class="hw-feat-accent"></div>
+                        </div>
+                        <div class="hw-feat-card">
+                            <div class="hw-feat-icon-box">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                    <path d="M2 17l10 5 10-5"></path>
+                                    <path d="M2 12l10 5 10-5"></path>
+                                </svg>
+                            </div>
+                            <h4>Textile Industry Ready</h4>
+                            <p>Purpose-built for textile inspection workflows.</p>
+                            <div class="hw-feat-accent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <!-- Why FIDAS Lite -->
+    <section id="why" class="section why-section-new">
+        <div class="container">
+            <div class="text-center fade-in-up" style="margin-bottom: 60px;">
+                <h2 class="section-title" data-i18n="why_title">Why <span>FIDAS Lite?</span></h2>
+                <p class="section-text" style="max-width: 700px; margin: 0 auto;">Our platform is engineered to bridge
+                    the gap between manual inspection and high-end automation.</p>
+            </div>
+
+            <div class="why-grid-new">
+                <div class="why-item-new fade-in-up">
+                    <div class="why-icon-new">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke="currentColor">
+                            <path d="M2 20V9l4-2v4l4-2v4l4-2v4l4-2v9z" stroke="#6a4cff" />
+                            <circle cx="18" cy="16" r="3" stroke="#3b82f6" />
+                            <path d="M18 14v4M16 16h4" stroke="#3b82f6" />
+                        </svg>
+                    </div>
+                    <h4 data-i18n="why_1_title">Affordable<br>Inspection Systems</h4>
+                    <p class="why-desc" data-i18n="why_1_desc">Get advanced inspection without high upfront costs.</p>
+                </div>
+                <div class="why-item-new fade-in-up delay-1">
+                    <div class="why-icon-new">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke="#3b82f6">
+                            <rect x="3" y="4" width="12" height="9" rx="1" />
+                            <rect x="17" y="4" width="4" height="14" rx="1" />
+                            <path d="M5 17h8" />
+                            <path d="M9 13v4" />
+                            <path d="M3 8h12" />
+                        </svg>
+                    </div>
+                    <h4 data-i18n="why_2_title">Industrial<br>Focus</h4>
+                    <p class="why-desc" data-i18n="why_2_desc">Built specifically for factory floor environments.</p>
+                </div>
+                <div class="why-item-new fade-in-up delay-2">
+                    <div class="why-icon-new">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke="#3b82f6">
+                            <rect x="3" y="5" width="14" height="10" rx="2" />
+                            <path d="M14 13l3 5 4-2-3-5" />
+                            <circle cx="10" cy="10" r="2" />
+                            <path d="M3 9h14" />
+                        </svg>
+                    </div>
+                    <h4 data-i18n="why_3_title">No Complex<br>Setup</h4>
+                    <p class="why-desc" data-i18n="why_3_desc">Runs on simple industrial HMI systems.</p>
+                </div>
+                <div class="why-item-new fade-in-up delay-3">
+                    <div class="why-icon-new">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke="#f5a623">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h4 data-i18n="why_4_title">Reliable<br>Performance</h4>
+                    <p class="why-desc" data-i18n="why_4_desc">Built for continuous factory floor operation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tagline Separator 5 -->
+    <div class="tagline-separator">
+        <h2 class="tagline-text fade-in-up" data-i18n="tagline_5">Scalable Technologies. <span>Smarter
+                Operations</span>.
+        </h2>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section dark-section">
+        <div class="cta-bg-image"></div>
+        <div class="container text-center cta-content fade-in-up">
+            <h2 class="cta-title" data-i18n="cta_title">Ready to change your inspection process?</h2>
+            <a href="contact.html" class="btn btn-secondary btn-large pulse-anim" data-i18n="cta_btn">Book a Demo
+                &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer dark-section">
+        <div class="container footer-container"
+            style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px;">
+            <div class="footer-left" style="max-width: 600px;">
+                <div class="logo-container" style="margin-bottom: 10px;">
+                    <img src="assets/fidas-lite-logo.png" alt="FIDAS Lite Logo" class="logo-img">
+                    <span class="logo-text">FIDAS-<span>Lite</span></span>
+                </div>
+                <p class="footer-desc" data-i18n="footer_desc"
+                    style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; text-align: justify;">
+                    In the competitive textile industry, manual defect logging is becoming a bottleneck for growth. To
+                    stay ahead, mills are turning to Automated fabric inspection systems to ensure precision and speed.
+                    While high-end automation was once a major capital expense, Ventura Automation Services is changing
+                    the game with FIDAS Lite.
+                </p>
+            </div>
+
+            <div class="footer-contact">
+                <h4 style="color: white; font-size: 20px; margin-bottom: 25px;" data-i18n="footer_contact_title">Contact
+                    Us</h4>
+                <div class="contact-item" style="margin-bottom: 15px; color: rgba(255,255,255,0.8);">
+                    <span style="font-weight: 500;" data-i18n="footer_email">Email:</span>
+                    <span>hello@fidaslite.com</span>
+                </div>
+                <div class="contact-item" style="color: rgba(255,255,255,0.8);">
+                    <span style="font-weight: 500;" data-i18n="footer_phone">Phone:</span> <span>+91 9962936356</span>
+                </div>
+            </div>
+        </div>
+        <div class="container"
+            style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center;">
+            <p style="font-size: 14px; color: rgba(255,255,255,0.5);" data-i18n="footer_rights">© 2025 FIDAS. All Rights
+                Reserved. Ventura
+                Automation Services Inc.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/919962936356" class="floating-whatsapp" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.411.001 12.04c0 2.123.54 4.197 1.561 6.027L0 24l6.135-1.61a11.81 11.81 0 005.911 1.57h.005c6.632 0 12.042-5.411 12.045-12.043a11.85 11.85 0 00-3.576-8.417z" />
+        </svg>
+    </a>
+
+    <a href="#top" class="back-to-top" title="Back to Top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </a>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar appearance (transparent over hero → glass on scroll)
+        const navbar = document.querySelector('.navbar');
+        const hasHero = !!document.querySelector('.hero');
+
+        const updateNavbarAppearance = () => {
+            if (!navbar) return;
+            if (!hasHero) {
+                navbar.classList.add('scrolled');
+                return;
+            }
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        };
+
+        updateNavbarAppearance();
+        window.addEventListener('scroll', updateNavbarAppearance, { passive: true });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const body = document.body;
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+        }
+
+        // Close menu when clicking links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+
+        // Mobile Dropdown Toggle
+        const dropdownTrigger = document.querySelector('.dropdown-trigger');
+        if (dropdownTrigger) {
+            dropdownTrigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    dropdownTrigger.parentElement.classList.toggle('active');
+                }
+            });
+        }
+
+        // Features Carousel Logic
+        const carousel = document.getElementById('features-carousel');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dots = document.querySelectorAll('#carousel-dots .dot');
+
+        if (carousel && prevBtn && nextBtn) {
+            const cardWidth = 350; // card width + gap
+
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            });
+
+            // Update dots on scroll
+            carousel.addEventListener('scroll', () => {
+                const index = Math.round(carousel.scrollLeft / cardWidth);
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            });
+
+            // Click dots to scroll
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    carousel.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIDAS Blog - Industrial Resources</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="translations.js"></script>
+    <style>
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        /* Navbar tweaks for white background */
+        .navbar:not(.scrolled) {
+            background: var(--nav-bg);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar:not(.scrolled) .logo-text,
+        .navbar:not(.scrolled) .nav-links a,
+        .navbar:not(.scrolled) .lang-trigger {
+            color: #1a1a1a;
+            border-color: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- Navbar -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="assets/fidas-lite-logo.png" alt="FIDAS Lite Logo" class="logo-img">
+                    <span class="logo-text">FIDAS-<span>Lite</span></span>
+                </a>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#home" data-i18n="nav_home">Home</a>
+                <a href="index.html#features" data-i18n="nav_features">Features</a>
+                <a href="index.html#why" data-i18n="nav_why">Why FIDAS Lite</a>
+                <div class="nav-item-dropdown">
+                    <a href="javascript:void(0)" class="dropdown-trigger active" data-i18n="nav_resources">Resources</a>
+                    <div class="dropdown-menu">
+                        <a href="blog.html" data-i18n="nav_blogs">Blogs</a>
+                        <a href="faq.html" data-i18n="nav_faq">FAQ / Q & A</a>
+                    </div>
+                </div>
+                <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+            </div>
+            <div class="lang-switcher">
+                <a href="#" class="lang-option active" data-lang="en">EN</a>
+                <span class="lang-divider"></span>
+                <a href="#" class="lang-option" data-lang="hi">हिंदी</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-btn" data-i18n="nav_demo">Book a Demo &rarr;</a>
+        </div>
+    </nav>
+
+    <div class="blog-landing-wrapper">
+        <h1 class="blog-page-title">FIDAS Blog</h1>
+
+        <div class="search-container">
+            <input type="text" class="blog-search-input" placeholder="Search blogs...">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Blog Card 1 (Current Article) -->
+            <a href="blog-introducing-fidas-lite.html" class="blog-card fade-in-up">
+                <div class="blog-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+                        alt="ERP linked inspection" class="blog-card-img">
+                    <div class="read-more-overlay">
+                        <span class="overlay-text">Read More</span>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <h2 class="blog-card-title">Introducing FIDAS Lite – The Smart Fabric Inspection Software</h2>
+                    <div class="blog-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span>FIDAS Team</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            <span>21/04/2026</span>
+                        </div>
+                    </div>
+                    <div class="blog-tags">
+                        <span class="tag-chip">Product Launch</span>
+                        <span class="tag-chip">Smart Inspection</span>
+                    </div>
+                    <span class="blog-card-link">Read More &rarr;</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer dark-section">
+        <div class="container footer-container"
+            style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px;">
+            <div class="footer-left" style="max-width: 600px;">
+                <div class="logo-container" style="margin-bottom: 10px;">
+                    <img src="assets/fidas-lite-logo.png" alt="FIDAS Lite Logo" class="logo-img">
+                    <span class="logo-text">FIDAS-<span>Lite</span></span>
+                </div>
+                <p class="footer-desc" data-i18n="footer_desc"
+                    style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; text-align: justify;">
+                    In the competitive textile industry, manual defect logging is becoming a bottleneck for growth. To
+                    stay ahead, mills are turning to Automated fabric inspection systems to ensure precision and speed.
+                    While high-end automation was once a major capital expense, Ventura Automation Services is changing
+                    the game with FIDAS Lite.
+                </p>
+            </div>
+            <div class="footer-right">
+                <h4 style="color: white; margin-bottom: 15px;">Quick Links</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="index.html#home"
+                            style="color: rgba(255,255,255,0.7); text-decoration: none;">Home</a></li>
+                    <li style="margin-bottom: 10px;"><a href="index.html#features"
+                            style="color: rgba(255,255,255,0.7); text-decoration: none;">Features</a></li>
+                    <li style="margin-bottom: 10px;"><a href="contact.html"
+                            style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#top" class="back-to-top" id="backToTop" title="Back to Top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </a>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar appearance (transparent over hero → glass on scroll)
+        const navbar = document.querySelector('.navbar');
+        const hasHero = !!document.querySelector('.hero');
+        const backToTop = document.getElementById('backToTop');
+
+        const updateNavbarAppearance = () => {
+            if (!navbar) return;
+            if (!hasHero) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            }
+
+            // Back to top button
+            if (!backToTop) return;
+            backToTop.classList.toggle('visible', window.scrollY > 500);
+        };
+
+        updateNavbarAppearance();
+        window.addEventListener('scroll', updateNavbarAppearance, { passive: true });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const body = document.body;
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+        }
+
+        // Close menu when clicking links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+
+        // Mobile Dropdown Toggle
+        const dropdownTrigger = document.querySelector('.dropdown-trigger');
+        if (dropdownTrigger) {
+            dropdownTrigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    dropdownTrigger.parentElement.classList.toggle('active');
+                }
+            });
+        }
+
+        // Blog Search Functionality
+        const searchInput = document.querySelector('.blog-search-input');
+        const blogCards = document.querySelectorAll('.blog-card');
+        const blogGrid = document.querySelector('.blog-grid');
+
+        // Add "No results" message element
+        const noResults = document.createElement('div');
+        noResults.className = 'no-results-message';
+        noResults.innerHTML = `
+            <div style="text-align: center; padding: 60px 20px; color: var(--text-gray);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px; margin-bottom: 16px; opacity: 0.5;">
+                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <h3>No blogs found matching your search</h3>
+                <p>Try different keywords or check your spelling.</p>
+            </div>
+        `;
+        noResults.style.display = 'none';
+        blogGrid.parentNode.insertBefore(noResults, blogGrid.nextSibling);
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            blogCards.forEach(card => {
+                const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
+                const tags = Array.from(card.querySelectorAll('.tag-chip')).map(tag => tag.textContent.toLowerCase());
+                const content = title + ' ' + tags.join(' ');
+
+                if (content.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Toggle no results message
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+                blogGrid.style.display = 'none';
+            } else {
+                noResults.style.display = 'none';
+                blogGrid.style.display = 'grid';
+            }
+        });
+    </script>
+</body>
+
+</html>

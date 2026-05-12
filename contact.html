@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FIDAS Lite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="translations.js"></script>
+</head>
+
+<body id="top">
+    <!-- Navbar -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="assets/fidas-lite-logo.png" alt="FIDAS Lite Logo" class="logo-img">
+                <span class="logo-text">FIDAS-<span>Lite</span></span>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#home" data-i18n="nav_home">Home</a>
+                <a href="index.html#features" data-i18n="nav_features">Features</a>
+                <a href="index.html#why" data-i18n="nav_why">Why FIDAS Lite</a>
+                <div class="nav-item-dropdown">
+                    <a href="javascript:void(0)" class="dropdown-trigger" data-i18n="nav_resources">Resources</a>
+                    <div class="dropdown-menu">
+                        <a href="blog.html" data-i18n="nav_blogs">Blogs</a>
+                        <a href="faq.html" data-i18n="nav_faq">FAQ / Q & A</a>
+                    </div>
+                </div>
+                <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+            </div>
+            <div class="lang-switcher">
+                <a href="#" class="lang-option active" data-lang="en">EN</a>
+                <span class="lang-divider"></span>
+                <a href="#" class="lang-option" data-lang="hi">हिंदी</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-btn" data-i18n="nav_demo">Book a Demo &rarr;</a>
+        </div>
+    </nav>
+
+    <!-- Contact Page Content -->
+    <section class="section contact-section" style="padding-top: 140px;">
+        <div class="container">
+            <h2 class="text-center contact-header-title fade-in-up" data-i18n="contact_header">Contact Us</h2>
+
+            <div class="contact-grid">
+                <!-- Left Column: Form -->
+                <div class="contact-card fade-in-left">
+                    <h3 data-i18n="contact_get_touch">Get in Touch</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label data-i18n="contact_label_interest">Interested In <span>*</span></label>
+                            <select class="form-control" id="interestSelect">
+                                <option data-i18n="contact_opt_default">Select an option</option>
+                                <option value="demo" data-i18n="contact_opt_demo">FIDAS Lite Demo</option>
+                                <option value="pricing" data-i18n="contact_opt_price">Pricing Inquiry</option>
+                                <option value="support" data-i18n="contact_opt_tech">Technical Support</option>
+                            </select>
+                        </div>
+
+                        <!-- Dynamic Questionnaire Section -->
+                        <div id="questionnaireSection" class="questionnaire-section">
+                            <div class="questionnaire-title">Inquiry Details</div>
+                            
+                            <!-- 1. Define Your Company -->
+                            <div class="q-group">
+                                <label class="q-label">Define Your Company</label>
+                                <div class="radio-card-group">
+                                    <div class="radio-card" onclick="selectRadio(this, 'companyType')">
+                                        <input type="radio" name="companyType" value="manufacture">
+                                        <span class="card-text">Greige fabric manufacture</span>
+                                    </div>
+                                    <div class="radio-card" onclick="selectRadio(this, 'companyType')">
+                                        <input type="radio" name="companyType" value="outsource">
+                                        <span class="card-text">We outsource greige fabric manufacturing</span>
+                                    </div>
+                                    <div class="radio-card" onclick="selectRadio(this, 'companyType')">
+                                        <input type="radio" name="companyType" value="purchase">
+                                        <span class="card-text">We purchase greige fabrics</span>
+                                    </div>
+                                    <div class="radio-card" onclick="selectRadio(this, 'companyType')">
+                                        <input type="radio" name="companyType" value="process">
+                                        <span class="card-text">We’re process</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2. Do You Own Looms? -->
+                            <div class="q-group">
+                                <label class="q-label">Do You Own Looms?</label>
+                                <div class="toggle-btn-group">
+                                    <div class="toggle-btn" onclick="toggleLooms(this, 'yes')">Yes</div>
+                                    <div class="toggle-btn" onclick="toggleLooms(this, 'no')">No</div>
+                                    <input type="hidden" name="ownsLooms" id="ownsLoomsInput">
+                                </div>
+                            </div>
+
+                            <!-- 3. Type of Looms (Conditional) -->
+                            <div id="loomTypeField" class="conditional-field">
+                                <label class="q-label">Type of Looms</label>
+                                <div class="checkbox-grid">
+                                    <label class="checkbox-card" onclick="toggleCheckbox(this)">
+                                        <input type="checkbox" name="loomType" value="airjet"> Airjet
+                                    </label>
+                                    <label class="checkbox-card" onclick="toggleCheckbox(this)">
+                                        <input type="checkbox" name="loomType" value="rapier"> Rapier
+                                    </label>
+                                    <label class="checkbox-card" onclick="toggleCheckbox(this)">
+                                        <input type="checkbox" name="loomType" value="projectile"> Projectile (Sulzer)
+                                    </label>
+                                    <label class="checkbox-card" onclick="toggleCheckbox(this, true)">
+                                        <input type="checkbox" name="loomType" value="others" id="othersLoomCheck"> Others
+                                    </label>
+                                </div>
+                                
+                                <div id="otherLoomInputWrapper" class="conditional-field">
+                                    <label class="q-label">Mention Other Loom Type</label>
+                                    <input type="text" class="form-control" name="otherLoomType" placeholder="Specify type...">
+                                </div>
+                            </div>
+
+                            <!-- 4. Inspection Machines -->
+                            <div class="q-group">
+                                <label class="q-label">How many inspection machines do you have?</label>
+                                <div class="input-suffix-group">
+                                    <input type="number" class="form-control" name="inspectionCount">
+                                    <span class="input-suffix">numbers</span>
+                                </div>
+                            </div>
+
+                            <!-- 5. Production Capacity -->
+                            <div class="q-group">
+                                <label class="q-label">Average production per day</label>
+                                <div class="input-suffix-group">
+                                    <input type="number" class="form-control" name="productionCapacity">
+                                    <span class="input-suffix">metres/day</span>
+                                </div>
+                            </div>
+
+                            <!-- 6. Expectations -->
+                            <div class="q-group">
+                                <label class="q-label">Your expectations from FIDAS Lite</label>
+                                <textarea class="form-control" rows="3" name="expectations" placeholder="Briefly describe what you're looking for..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Technical Support Section -->
+                        <div id="supportSection" class="questionnaire-section">
+                            <div class="questionnaire-title">Support Request</div>
+                            
+                            <div class="q-group">
+                                <label class="q-label">Are you an existing customer?</label>
+                                <div class="toggle-btn-group">
+                                    <div class="toggle-btn" onclick="toggleSupportStatus(this, 'existing')">Existing Customer</div>
+                                    <div class="toggle-btn" onclick="toggleSupportStatus(this, 'new')">New Inquiry</div>
+                                    <input type="hidden" name="supportStatus" id="supportStatusInput">
+                                </div>
+                            </div>
+
+                            <!-- Existing Customer Fields -->
+                            <div id="existingSupportFields" class="conditional-field">
+                                <div class="form-group">
+                                    <label class="q-label">Company Name <span>*</span></label>
+                                    <input type="text" class="form-control" name="companyName" placeholder="Enter company name">
+                                </div>
+                                <div class="form-group" style="margin-top: 20px;">
+                                    <label class="q-label">Describe the Issue <span>*</span></label>
+                                    <textarea class="form-control" rows="4" name="supportIssue" placeholder="Explain the issue you are facing..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- New Inquiry Fields -->
+                            <div id="newSupportFields" class="conditional-field">
+                                <div class="form-group">
+                                    <label class="q-label">Please describe your requirement <span>*</span></label>
+                                    <textarea class="form-control" rows="4" name="supportRequirement" placeholder="Tell us how we can help you..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="contact_label_name">Name <span>*</span></label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="contact_label_email">Work Email <span>*</span></label>
+                            <input type="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="contact_label_phone">Phone Number <span>*</span></label>
+                            <div class="phone-input-group">
+                                <div class="country-code">
+                                    <img src="https://flagcdn.com/w20/in.png" alt="India">
+                                    +91
+                                </div>
+                                <input type="tel" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="contact_label_message">Message</label>
+                            <textarea class="form-control" rows="4"></textarea>
+                        </div>
+
+                        <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light"
+                            style="margin-bottom: 20px;"></div>
+
+                        <button type="submit" class="btn btn-send" data-i18n="contact_btn_send">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Right Column: Info & Socials -->
+                <div class="fade-in-right">
+                    <div class="info-card">
+                        <h3 data-i18n="contact_info_title">Contact Information</h3><br>
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <div>
+                                <b data-i18n="contact_info_phone">Phone:</b> <span>+91 9962936356</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <div>
+                                <b data-i18n="contact_info_email">Email:</b> <span>hello@fidaslite.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="connect-title" data-i18n="contact_connect_title">Connect With Us</h3>
+
+                    <div class="social-grid">
+                        <a href="https://www.linkedin.com/company/ventura-automation-services/" class="social-card"
+                            target="_blank">
+                            <svg viewBox="0 0 24 24" fill="#0077b5">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            <h4>LinkedIn</h4>
+                            <p style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">Ventura Automation Services</p>
+                            <span class="follow-link" data-i18n="social_follow">Follow Us</span>
+                        </a>
+
+                        <a href="https://wa.me/919962936356" class="social-card fade-in-up delay-1" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="#25d366">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.411.001 12.04c0 2.123.54 4.197 1.561 6.027L0 24l6.135-1.61a11.81 11.81 0 005.911 1.57h.005c6.632 0 12.042-5.411 12.045-12.043a11.85 11.85 0 00-3.576-8.417z" />
+                            </svg>
+                            <h4>whatsapp</h4>
+                            <p style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">+91 9962936356</p>
+                            <span class="follow-link" data-i18n="social_follow">Follow Us</span>
+                        </a>
+
+                        <a href="https://www.youtube.com/@VenturaAutomation" class="social-card fade-in-up delay-2"
+                            target="_blank">
+                            <svg viewBox="0 0 24 24" fill="#ff0000">
+                                <path
+                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z" />
+                            </svg>
+                            <h4>Youtube</h4>
+                            <p style="font-size: 13px; color: #666; margin-bottom: 8px;">@VenturaAutomation</p>
+                            <span class="follow-link" data-i18n="social_follow">Follow Us</span>
+                        </a>
+
+                        <a href="https://www.instagram.com/venturaautomation/" class="social-card fade-in-up delay-3"
+                            target="_blank">
+                            <svg viewBox="0 0 24 24" fill="#e1306c">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.31.974.974 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.31 3.608-.974.974-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.31-.974-.974-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.336-2.633 1.31-3.608.974-.974 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                            <h4>instagram</h4>
+                            <p style="font-size: 13px; color: #666; margin-bottom: 8px;">venturaautomation</p>
+                            <span class="follow-link" data-i18n="social_follow">Follow Us</span>
+                        </a>
+
+                        <a href="https://x.com/fidas_in" class="social-card fade-in-up delay-1" target="_blank">
+
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.64 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932L18.901 1.153zm-1.29 19.494h2.039L6.486 3.24H4.298L17.61 20.647z" />
+                            </svg>
+
+
+
+                            <p style="font-size: 13px; color: #666; margin-bottom: 8px;">
+                                @fidas_in
+                            </p>
+
+                            <span class="follow-link" data-i18n="social_follow">
+                                Follow Us
+                            </span>
+
+                        </a>
+                        <a href="https://www.facebook.com/fidas.in" class="social-card fade-in-up delay-2"
+                            target="_blank">
+                            <svg viewBox="0 0 24 24" fill="#1877f2">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                            <h4>Facebook</h4>
+                            <p style="font-size: 13px; color: #666; margin-bottom: 8px;">@fidas.in</p>
+                            <span class="follow-link" data-i18n="social_follow">Follow Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/919962936356" class="floating-whatsapp" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.411.001 12.04c0 2.123.54 4.197 1.561 6.027L0 24l6.135-1.61a11.81 11.81 0 005.911 1.57h.005c6.632 0 12.042-5.411 12.045-12.043a11.85 11.85 0 00-3.576-8.417z" />
+        </svg>
+    </a>
+
+    <a href="#top" class="back-to-top" title="Back to Top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer dark-section">
+        <div class="container footer-container"
+            style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px;">
+            <div class="footer-left" style="max-width: 600px;">
+                <div class="logo-container" style="margin-bottom: 10px;">
+                    <img src="assets/fidas-lite-logo.png" alt="FIDAS Lite Logo" class="logo-img">
+                    <span class="logo-text">FIDAS-<span>Lite</span></span>
+                </div>
+                <p class="footer-desc" data-i18n="footer_desc"
+                    style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; text-align: justify;">
+                    In the competitive textile industry, manual defect logging is becoming a bottleneck for growth. To stay ahead, mills are turning to Automated fabric inspection systems to ensure precision and speed. While high-end automation was once a major capital expense, Ventura Automation Services is changing the game with FIDAS Lite.
+                </p>
+            </div>
+
+            <div class="footer-contact">
+                <h4 style="color: white; font-size: 20px; margin-bottom: 25px;" data-i18n="footer_contact_title">Contact
+                    Us</h4>
+                <div class="contact-item" style="margin-bottom: 15px; color: rgba(255,255,255,0.8);">
+                    <span style="font-weight: 500;" data-i18n="footer_email">Email:</span> <span>hello@fidaslite.com</span>
+                </div>
+                <div class="contact-item" style="color: rgba(255,255,255,0.8);">
+                    <span style="font-weight: 500;" data-i18n="footer_phone">Phone:</span> <span>+91 9962936356</span>
+                </div>
+            </div>
+        </div>
+        <div class="container"
+            style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center;">
+            <p style="font-size: 14px; color: rgba(255,255,255,0.5);" data-i18n="footer_rights">© 2025 FIDAS. All Rights
+                Reserved. Ventura
+                Automation Services Inc.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
+
+        // Navbar appearance (transparent over hero → glass on scroll)
+        const navbar = document.querySelector('.navbar');
+        const hasHero = !!document.querySelector('.hero');
+
+        const updateNavbarAppearance = () => {
+            if (!navbar) return;
+            if (!hasHero) {
+                navbar.classList.add('scrolled');
+                return;
+            }
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        };
+
+        updateNavbarAppearance();
+        window.addEventListener('scroll', updateNavbarAppearance, { passive: true });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const body = document.body;
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+        }
+
+        // Close menu when clicking links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+
+        // Mobile Dropdown Toggle
+        const dropdownTrigger = document.querySelector('.dropdown-trigger');
+        if (dropdownTrigger) {
+            dropdownTrigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    dropdownTrigger.parentElement.classList.toggle('active');
+                }
+            });
+        }
+
+        // --- Dynamic Questionnaire Logic ---
+        const interestSelect = document.getElementById('interestSelect');
+        const questionnaireSection = document.getElementById('questionnaireSection');
+
+        if (interestSelect) {
+            interestSelect.addEventListener('change', function() {
+                const val = this.value;
+                // Reset sections
+                questionnaireSection.style.display = 'none';
+                document.getElementById('supportSection').style.display = 'none';
+
+                if (val === 'demo' || val === 'pricing') {
+                    questionnaireSection.style.display = 'block';
+                } else if (val === 'support') {
+                    document.getElementById('supportSection').style.display = 'block';
+                }
+            });
+        }
+
+        // Radio Card Selection
+        window.selectRadio = function(element, name) {
+            const cards = element.parentElement.querySelectorAll('.radio-card');
+            cards.forEach(c => c.classList.remove('active'));
+            element.classList.add('active');
+            element.querySelector('input').checked = true;
+        };
+
+        // Loom Toggle Logic
+        window.toggleLooms = function(element, val) {
+            const btns = element.parentElement.querySelectorAll('.toggle-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            element.classList.add('active');
+            document.getElementById('ownsLoomsInput').value = val;
+            
+            const loomTypeField = document.getElementById('loomTypeField');
+            if (val === 'yes') {
+                loomTypeField.classList.add('visible');
+            } else {
+                loomTypeField.classList.remove('visible');
+            }
+        };
+
+        // Checkbox Toggle Logic
+        window.toggleCheckbox = function(element, isOther = false) {
+            const input = element.querySelector('input');
+            // If the click wasn't directly on the input, toggle it manually
+            if (event.target !== input) {
+                input.checked = !input.checked;
+            }
+            
+            if (input.checked) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+
+            if (isOther) {
+                const wrapper = document.getElementById('otherLoomInputWrapper');
+                if (input.checked) {
+                    wrapper.classList.add('visible');
+                } else {
+                    wrapper.classList.remove('visible');
+                }
+            }
+        };
+
+        // Support Status Toggle Logic
+        window.toggleSupportStatus = function(element, status) {
+            const btns = element.parentElement.querySelectorAll('.toggle-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            element.classList.add('active');
+            document.getElementById('supportStatusInput').value = status;
+
+            const existingFields = document.getElementById('existingSupportFields');
+            const newFields = document.getElementById('newSupportFields');
+
+            if (status === 'existing') {
+                existingFields.classList.add('visible');
+                newFields.classList.remove('visible');
+            } else {
+                newFields.classList.add('visible');
+                existingFields.classList.remove('visible');
+            }
+        };
+    </script>
+</body>
+
+</html>
